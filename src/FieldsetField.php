@@ -469,9 +469,6 @@ class FieldsetField
 
         // determine the field_id, which allows us to identify the field for CSS purposes
         $field_id = 'col_' . $this->name;
-        if ($parent = $this->fieldset()->parent()) {
-            $parent->get_tabular_form() and $field_id = $parent->get_tabular_form() . '_col_' . $this->basename;
-        }
 
         $template = $this->template ?:
             $form->get_config('field_template',
