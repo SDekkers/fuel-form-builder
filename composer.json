@@ -1,0 +1,20 @@
+{
+    "name": "sdekkers/fuel-form-builder",
+    "description": "Useful Form and Fieldset builder from FuelPHP",
+    "type": "library",
+    "license": "None",
+    "minimum-stability": "stable",
+    "require": {},
+    "authors": [
+        {
+            "name": "Sander Dekkers",
+            "email": "sander.dekkers@port-it.nl"
+        }
+    ],
+    "require": {
+        "php": "^7.1"
+    },
+    "autoload": {
+        "psr-4": {"SDekkers\\FormBuilder\\": "src/"}
+    }
+}
