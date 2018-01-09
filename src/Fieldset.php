@@ -211,14 +211,13 @@ class Fieldset
     /**
      * Factory for FieldsetField objects
      *
-     * @param   string
-     * @param   string
-     * @param   array
-     * @param   array
-     *
-     * @return  FieldsetField
+     * @param $name
+     * @param string $label
+     * @param array $attributes
+     * @return bool|false|mixed|FieldsetField
+     * @throws \Exception
      */
-    public function add($name, $label = '', array $attributes = [], array $rules = [])
+    public function add($name, $label = '', array $attributes = [])
     {
         if ($name instanceof FieldsetField) {
             if ($name->name == '' or $this->field($name->name) !== false) {
@@ -241,14 +240,11 @@ class Fieldset
         if (is_array($name)) {
             $attributes = $name;
             $label = isset($name['label']) ? $name['label'] : '';
-            $rules = isset($name['rules']) ? $name['rules'] : [];
             $name = $name['name'];
         }
 
         // Check if it exists already, if so: return and give notice
         if ($field = $this->field($name)) {
-            \Errorhandler::notice('Field with this name exists already in this fieldset: "' . $name . '".');
-
             return $field;
         }
 
