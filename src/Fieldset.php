@@ -307,7 +307,7 @@ class Fieldset
     public function add_model($class, $instance = null)
     {
 
-        $this->fields = $class::set_form_fields($class, $instance)->fields;
+        $this->fields = $class::set_form_fields($class, $instance, $this->config)->fields;
 
         return $this;
     }
