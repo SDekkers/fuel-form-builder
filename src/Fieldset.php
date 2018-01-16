@@ -102,17 +102,7 @@ class Fieldset
      */
     public static function forge($name = '__default__', array $config = [])
     {
-        if ($exists = static::instance($name)) {
-            return $exists;
-        }
-
-        static::$_instances[$name] = new static($name, $config);
-
-        if ($name == '__default__') {
-            static::$_instance = static::$_instances[$name];
-        }
-
-        return static::$_instances[$name];
+        return new static($name, $config);
     }
 
     /**
